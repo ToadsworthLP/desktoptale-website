@@ -3,11 +3,6 @@
     src: url(fonts/determination-sans.woff);
 }
 
-@font-face {
-    font-family: DeterminationMono;
-    src: url(fonts/determination-mono.woff);
-}
-
 body {
     background: black;
     color: white;
@@ -88,12 +83,11 @@ ul {
     border-width: 5px;
     border-color: white;
 
-    font-family: DeterminationMono, monospace;
     font-size: 3.5rem;
     text-align: center;
 }
 
-.download-button a {
+.download-container a {
     text-decoration: none;
 }
 
