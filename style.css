@@ -22,12 +22,59 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    font-weight: normal;
+}
+
 ul {
     list-style-type: square;
 }
 
+.navbar {
+    position: fixed;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    background: black;
+}
+
+.navbar-link {
+    color: rgb(128, 128, 128);
+
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.navbar-link:hover {
+    color: white;
+}
+
+.navbar-mobile {
+    display: none;
+    position: fixed;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    justify-content: space-evenly;
+    background: black;
+
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-menu-icon {
+    display: none;
+    position: fixed;
+
+    width: 10vw;
+    margin: 10px;
+    image-rendering: pixelated;
+}
+
 .hero {
-    padding: 3%;
+    padding: 6% 3% 3%;
 }
 
 .icon {
@@ -103,6 +150,10 @@ ul {
     color: rgb(128, 128, 128);
 }
 
+.yellow-text {
+    color: rgb(255, 255, 0);
+}
+
 .more-info-text {
     margin-top: 3vw;
 
@@ -117,6 +168,13 @@ ul {
 .content {
     margin: auto;
     width: 50%;
+}
+
+.text-page-content {
+    margin: auto;
+    padding-top: 2%;
+    width: 50%;
+    font-size:  2rem;
 }
 
 .faq-question {
@@ -160,7 +218,30 @@ ul {
         width: 90%;
     }
 
+    .text-page-content {
+        width: 90%;
+        font-size: 1.5rem;
+    }
+
     .info-container {
         font-size: 1.5rem;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .navbar-link {
+        font-size: 2rem;
+        color: white;
+        padding: 10px;
+    }
+
+    .nav-menu-icon {
+        display: revert;
+    }
+
+    .navbar-mobile {
+        display: flex;
     }
 }

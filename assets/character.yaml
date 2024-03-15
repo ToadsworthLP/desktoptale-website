@@ -1,0 +1,65 @@
+Name: Character Name
+Category: Category Name
+Idle:
+  Up:
+    Sprite: Spr_Idle_Up.png
+    FrameRate: 0
+    FrameCount: 1
+    StartFrame: 0
+  Down:
+    Sprite: Spr_Idle_Down.png
+    FrameRate: 0
+    FrameCount: 1
+    StartFrame: 0
+  Left:
+    Sprite: Spr_Idle_Left.png
+    FrameRate: 0
+    FrameCount: 1
+    StartFrame: 0
+  Right:
+    Sprite: Spr_Idle_Right.png
+    FrameRate: 0
+    FrameCount: 1
+    StartFrame: 0
+Walk:
+  Up:
+    Sprite: Spr_Walk_Up.png
+    FrameRate: 5
+    FrameCount: 4
+    StartFrame: 1
+  Down:
+    Sprite: Spr_Walk_Down.png
+    FrameRate: 5
+    FrameCount: 4
+    StartFrame: 1
+  Left:
+    Sprite: Spr_Walk_Left.png
+    FrameRate: 5
+    FrameCount: 4
+    StartFrame: 1
+  Right:
+    Sprite: Spr_Walk_Right.png
+    FrameRate: 5
+    FrameCount: 4
+    StartFrame: 1
+Run:
+  Up:
+    Sprite: Spr_Run_Up.png
+    FrameRate: 10
+    FrameCount: 6
+    StartFrame: 1
+  Down:
+    Sprite: Spr_Run_Down.png
+    FrameRate: 10
+    FrameCount: 6
+    StartFrame: 1
+  Left:
+    Sprite: Spr_Run_Left.png
+    FrameRate: 10
+    FrameCount: 6
+    StartFrame: 1
+  Right:
+    Sprite: Spr_Run_Right.png
+    FrameRate: 10
+    FrameCount: 6
+    StartFrame: 1

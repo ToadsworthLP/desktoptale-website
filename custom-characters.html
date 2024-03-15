@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Character Tutorial - Desktoptale</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+</head>
+<body>
+<div class="navbar">
+  <a class="navbar-link" href="index.html">Home</a>
+  <a class="navbar-link" href="news.html">News & Patch Notes</a>
+  <a class="navbar-link" href="custom-characters.html">Custom Characters</a>
+</div>
+<div id="toggleable-nav" class="navbar-mobile" style="display: none">
+  <a class="navbar-link" href="index.html">Home</a>
+  <a class="navbar-link" href="news.html">News & Patch Notes</a>
+  <a class="navbar-link" href="custom-characters.html">Custom Characters</a>
+</div>
+<img id="nav-toggle" class="nav-menu-icon" src="img/menu.png">
+<div class="text-page-content">
+  <h1>- Custom Character Tutorial -</h1>
+  <p>
+    Thanks to the custom character system added in version 1.1.0, creating characters for Desktoptale is really easy, no programming required!<br>
+    All you need is an image editing application (Paint.NET or the new MS Paint with transparency support is enough) as well as a text editor.
+  </p>
+  <p>
+    <a class="yellow-text">If you want to use an existing custom character that you obtained elsewhere, you don't need to do any of this!</a>
+    Just place the character folder into the Custom folder, located inside the Content folder next to Desktoptale.exe - there is a file named "PUT YOUR CUSTOM CHARACTERS HERE" in the right spot to help you find it.
+  </p>
+  <p>
+    If you prefer to learn from an example, you can download a recreation of Clover using the custom character system <a href="assets/custom-character-example.zip" target="_blank" rel="noopener noreferrer">here</a>.
+  </p>
+
+  <h2>Step 1: Preparing your sprites</h2>
+  <p>
+    First, you'll need to download (or draw) a spritesheet of a character to add. At the very least, your spritesheet should contain idle and walking animations for each of the 4 directions (up, down, left and right).
+    If you only have one side sprite instead of seperate left/right ones, don't worry! We'll deal with this in the next step.
+    Note that some games (such as the original Undertale) often don't have dedicated idle sprites as they just use the first frame from the walk cycle - that's fine too! Just continue for now.
+  </p>
+
+  <h2>Step 2: Editing your sprites</h2>
+  <p>
+    Next, you'll need to cut up the spritesheet into individual files for each state (idle, walking, running) and direction (up, down, left and right). Skip any states and directions you don't have sprites for.
+  </p>
+  <p>
+    For animations with only one frame (e.g. idle stance), just paste each direction into its own file. Though recommended, they don't need to be the exact same pixel size as Desktoptale will always try to correct for differences.
+  </p>
+  <p>
+    For animations with multiple frames (e.g. walk cycles), you first need to find a size in pixels that is large enough to fit each single frame.
+    Then, create a new image per direction, set its height to the frame height you just measured (for that direction) and set the width to the frame width <a class="yellow-text">multiplied by the frame count</a> of the animation.
+    For example, if you measured a size of 20x32 pixels and the walk cycle is 4 frames, the new image must be 80x32 pixels (these values are what I measured for Clover from the custom character example above).
+    Finally, paste each frame of the animation next to each other into the new file (left to right).
+    To align them correctly, it helps to draw colored rectangles the size of a frame (as many as there are frames in the animation) on a seperate layer to show where the frames should go and use them as a guide.
+  </p>
+
+  <h2>Step 3: Creating your character definition file</h2>
+  <p>
+    Next, download this <a href="assets/character.yaml" target="_blank" rel="noopener noreferrer" download>template file</a> or modify the Clover.yaml file from the example character above.
+    It's just a plain text file, so you can open it with any text editor you like.
+    Notepad works just fine, but tools like Visual Studio Code or Notepad++ have integrated syntax highlighting that makes working with YAML files a little more comfortable.
+  </p>
+  <p>
+    The first two lines contain the name of your character and the name of the category it will be sorted into in the character selection list.
+    These can almost anything, but I recommend using the game name as the category.
+    After that, the 3 possible states a character can be in (idle, walking and running) are configured separately for each direction.
+  </p>
+  <p>
+    The "Sprite" property sets the relative file path to the files you made in step 2, this means that if you place them right next to the YAML file, you can just use the file name itself, which is what I recommend.
+    Re-using the same sprite file across multiple states is allowed.
+  </p>
+  <p>"FrameRate" sets the frame rate of the animation in frames per second (decimals allowed, seperated by a "."),
+    "FrameCount" determines how many frames the animation contains and
+    "StartFrame" allows starting the first loop of the animation at the specified frame index (starts from 0, so the second frame actually has a frame index of 1).
+  </p>
+  <p>
+    <a class="yellow-text">If you only have one set of side-facing sprites instead of seperate left/right ones,</a> remove the "Right" section of each state in the definition file.
+    This tells Desktoptale to automatically generate one internally by copying the "Left" section and flipping it.
+    For this to work, you need to make sure that the side sprites are left-facing. If they aren't, please flip them manually in your image editing application of choice.
+  </p>
+  <p>
+    <a class="yellow-text">If you don't have seperate running sprites,</a> remove the entire "Run" state from the definition file.
+    This automatically generates one from the "Walk" state that plays its animations at 2x speed.
+  </p>
+
+  <h2>Step 4: Putting it all together</h2>
+  <p>
+    Almost done! Locate the custom character folder ("Custom" inside "Content" next to Desktoptale.exe) and make a new folder inside (not strictly required but recommended).
+    Next, copy your character definition file and your sprites to this folder (if you followed my advice to put just the file names of the sprites into the definition file).
+    Now, start Desktoptale (close it if you had it open before). Your character should now appear in the character selection list!
+  </p>
+
+  <h2>Troubleshooting</h2>
+  <p>
+    If you get an error message <a class="yellow-text">when opening Desktoptale</a>, that means that there is some error inside your character definition file.
+    I set up a few more or less helpful error messages for a few common problems, but if you're really lost, please contact me on Twitter (@ToadsworthLP) or Discord (toadsworthlp).
+  </p>
+
+  <p>
+    If you get an error message <a class="yellow-text">when selecting your character from the character list</a>, the program can't find at least one of the sprites specified in the character definition file.
+    The error message contains the full path of where it expected to find the file - the most likely cause for this is a typo in either the file name itself or in a "Sprite" property in the character definition file.
+  </p>
+</div>
+<div class="footer">
+  <div>
+    Made with <img class="footer-soul-icon" src="img/icon.png"> by ToadsworthLP
+  </div>
+  <div>
+    Characters and graphics created by Team UTY. UNDERTALE created by Toby Fox.
+  </div>
+  <div>
+    Not affiliated with or endorsed by Team UTY or Toby Fox.
+  </div>
+</div>
+</body>
+<script src="navbar.js"></script>
+</html>
