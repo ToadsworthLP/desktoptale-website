@@ -8,6 +8,17 @@
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 </head>
 <body>
+<div class="navbar">
+    <a class="navbar-link" href="index.html">Home</a>
+    <a class="navbar-link" href="news.html">News & Patch Notes</a>
+    <a class="navbar-link" href="custom-characters.html">Custom Characters</a>
+</div>
+<div id="toggleable-nav" class="navbar-mobile" style="display: none">
+    <a class="navbar-link" href="index.html">Home</a>
+    <a class="navbar-link" href="news.html">News & Patch Notes</a>
+    <a class="navbar-link" href="custom-characters.html">Custom Characters</a>
+</div>
+<img id="nav-toggle" class="nav-menu-icon" src="img/menu.png">
 <div class="hero">
     <div class="align-images">
         <img class="icon" src="img/icon.png" alt="The Desktoptale logo. I originally wanted to put the character sprites into this icon since their colors match the Windows logo so well, but then I remembered that Axis exists">
@@ -16,23 +27,24 @@
         <img class="title" src="img/title.png">
     </div>
     <div class="description-text">
-        "What if someone added Undertale Yellow characters to Windows?"
+        29 playable characters from Undertale, Undertale Yellow and Deltarune!
     </div>
     <div class="download-container-container">
         <div class="download-container">
             <div class="character-icon-container">
+                <img class="character-icon" src="img/frisk.png">
+                <img class="character-icon" src="img/kris.png">
                 <img class="character-icon" src="img/clover.png">
-                <img class="character-icon" src="img/martlet.png">
-                <img class="character-icon" src="img/starlo.png">
-                <img class="character-icon" src="img/ceroba.png">
-                <img class="character-icon" src="img/axis.png">
             </div>
-            <a href="https://github.com/ToadsworthLP/desktoptale/releases/download/1.0.0/Desktoptale-1.0.0.zip">
+            <a href="https://github.com/ToadsworthLP/desktoptale/releases/download/1.1.0/Desktoptale-1.1.0.zip">
                 <div class="download-button">
                     DOWNLOAD
                 </div>
             </a>
         </div>
+    </div>
+    <div class="download-extra-text">
+        Current version: 1.1.0 (released 3/16/2024)
     </div>
     <div class="download-extra-text">
         Requires .NET Framework 4.8 (normally preinstalled with Windows)
@@ -47,8 +59,13 @@
 <div class="content">
     <div class="info-container">
         <h1>- WHAT? -</h1>
-        Desktoptale is a tiny program that puts a fully controllable Undertale Yellow character (Clover, Martlet, Starlo, Ceroba or Axis) on your Windows desktop!<br>
-        You can either move them yourself (see CONTROLS section below) or just leave them be, in which case they'll start walking around on their own.
+        <p>
+            Desktoptale is a tiny program that puts a fully controllable Undertale, Undertale Yellow or Deltarune character of your choice on your Windows desktop!
+        </p>
+        <p>
+            You can either move them yourself (see CONTROLS section below) or just leave them be, in which case they'll start walking around on their own.
+            You can even add your own custom characters! Refer to the <a href="custom-characters.html" target="_blank" rel="noopener noreferrer">custom character tutorial</a> for details.
+        </p>
         <h1>- SETUP -</h1>
         <ol>
             <li>Download the ZIP archive using the link above</li>
@@ -72,6 +89,13 @@
             There should be a link somewhere saying something like "More info" which causes a "Run anyway" button to appear somewhere at the bottom of the warning screen.
         </div>
         <div class="faq-question">
+            Q: How do I add custom characters?
+        </div>
+        <div class="faq-answer">
+            A: Custom characters must be placed inside the Custom folder, which is inside the Content folder next to Desktoptale.exe - there is a file named "PUT YOUR CUSTOM CHARACTERS HERE" in this location to help you find it.
+            To learn how to create your own custom characters from scratch, please refer to the <a href="custom-characters.html" target="_blank" rel="noopener noreferrer">custom character tutorial</a>.
+        </div>
+        <div class="faq-question">
             Q: It doesn't work!
         </div>
         <div class="faq-answer">
@@ -93,11 +117,12 @@
         Made with <img class="footer-soul-icon" src="img/icon.png"> by ToadsworthLP
     </div>
     <div>
-        Characters and graphics created by Team UTY. UNDERTALE created by Toby Fox.
+        UNDERTALE and DELTARUNE created by Toby Fox. Undertale Yellow created by Team UTY.
     </div>
     <div>
-        Not affiliated with or endorsed by Team UTY or Toby Fox.
+        Not affiliated with or endorsed by Toby Fox or Team UTY.
     </div>
 </div>
 </body>
+<script src="navbar.js"></script>
 </html>
