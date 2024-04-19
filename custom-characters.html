@@ -28,6 +28,10 @@
     All you need is an image editing application (Paint.NET or the new MS Paint with transparency support is enough) as well as a text editor.
   </p>
   <p>
+    Many new customization options were added in 1.6.0, but using them is strictly optional - see step 5 for details.
+    While the character definition file template is still minimal on purpose, the Clover example below has been updated to make use of all the new features.
+  </p>
+  <p>
     <a class="yellow-text">If you want to use an existing custom character that you obtained elsewhere, you don't need to do any of this!</a>
     Just place the character folder into the Custom folder, located inside the Content folder next to Desktoptale.exe - there is a file named "PUT YOUR CUSTOM CHARACTERS HERE" in the right spot to help you find it.
   </p>
@@ -91,6 +95,21 @@
     Almost done! Locate the custom character folder ("Custom" inside "Content" next to Desktoptale.exe) and make a new folder inside (not strictly required but recommended).
     Next, copy your character definition file and your sprites to this folder (if you followed my advice to put just the file names of the sprites into the definition file).
     Now, start Desktoptale (close it if you had it open before). Your character should now appear in the character selection list!
+  </p>
+
+  <h2>Step 5: The cherry on top (optional)</h2>
+  <p>
+    Starting from version 1.6.0, it is possible to set a custom animation to be played while C is held, mimicking the functionality of the Clover dance in custom characters.
+    An animation that plays whenever the character is being dragged around with the mouse can be added as well.
+    Both of these features make use of their own sections in the character definition file, titled "Action" for the former and "Drag" for the latter.
+    Their structure is identical to the Idle, Run and Walk sections, but while both support separate sprites for all orientations, it is also possible to only specify a Down sprite, causing it to be used as a fallback -
+    please refer to the Clover example for details.
+    Additionally, by adding "Loop: false" to the definition of an orientation, the animation will only be played once each time it is triggered instead of continuously playing on loop.
+  </p>
+  <p>
+    Finally, both walking and running speeds of your character can be overridden by adding the WalkSpeed and RunSpeed parameters to the top of your character definition file.
+    These values are specified in pixels per second at a scale of 1x - at higher scale settings, the speed defined here will be multiplied by the scale factor.
+    If only WalkSpeed is defined, the running speed is automatically set to double its value. To make your character unable to move at all (like Flowey), set both to 0.
   </p>
 
   <h2>Troubleshooting</h2>
